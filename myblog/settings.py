@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -102,14 +103,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_project", "static_root")
+#fichier qui seront telecharger
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env_file", "static_root")
 
 STATICFILES_DIRS = (
     #os.path.join(BASE_DIR, "static"), #important dajouter ceci
     os.path.join(BASE_DIR, "static_project", "our_static"),
 )
 
+#fichiers qui seront uploader : photo, ...
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env_file", "media_root")
 
+MEDIA_URL = '/media/'
 
 
 
