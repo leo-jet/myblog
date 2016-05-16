@@ -102,10 +102,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_projet", "static_root")
+STATIC_ROOT = os.path.join(BASE_DIR, "static_project", "static_root")
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"), #important dajouter ceci
+    #os.path.join(BASE_DIR, "static"), #important dajouter ceci
     os.path.join(BASE_DIR, "static_project", "our_static"),
 )
 
