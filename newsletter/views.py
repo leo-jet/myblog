@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from .forms import SignUpForm
 from .forms import ContactForm
+from sympy import *
 # Create your views here.
 def home(request):
     title = "My Title"
+    
+    x, y, z, t = symbols('x y z t')
+    latex_exp = latex(Integral(sqrt(1/x), x))
     #add a form
     form = SignUpForm(request.POST or None)
     if form.is_valid():
@@ -13,6 +17,7 @@ def home(request):
     context = {
                "template_title": title,
                "form": form,
+               "latex_exp": latex_exp,
                }
     return render(request, "home.html", context)
 

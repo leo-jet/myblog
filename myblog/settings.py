@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'newsletter',
+    'django_mathjax',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -115,6 +116,10 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env_file", "media_root")
 
 MEDIA_URL = '/media/'
+
+
+#MATH JAX configuration
+MATHJAX_ENABLED=True
 
 
 
